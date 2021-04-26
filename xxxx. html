@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="GET">
+        <div>
+            <label for="hi">이름: </label>
+            <input type="text" id="hi" name="name">
+        </div>
+        <div>
+            <label for="select">성별</label>
+            <select name="gender" id="select">
+                <option value="male">남자</option>
+                <option value="female">여자</option>
+            </select>
+        </div>
+        <div>
+            <label for="introduce">자기소개</label>
+            <br>
+            <textarea name="introduce" id="introduce" cols="30" rows="10" placeholder="자기소개를 입력해주세요"> 자기소개를 입력해주세요 </textarea>
+        </div>
+        <div>
+            <button type="submit">제출</button>
+            <button type="reset">리셋</button>
+        </div>
+    </form>
+</body>
+</html>
