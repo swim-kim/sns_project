@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <TITLE>Introduce KimSwim</TITLE>
+    <link rel="stylesheet" href="{% static 'css/project copy.css' %}">
+    
+</head>
+<body>
+
+     <table>
+            <div class="left">
+                <img src= "{% static 'images/KakaoTalk_20210507_201852100.jpg' %}"  width="300"; height="300"; />
+                
+            </div> 
+            <div class="right">
+                <p>#어렸을 때 어떤 아이였을까?#</p>
+                <p>-곱슬머리 : 어른들이 항상 파마했냐고 물어볼 정도의 곱슬 머리였다</p>
+                <p>-외향적인 성격 : 전학을 많이 다녀서 적응력이 좋았다 </p>
+                <p>-학원보다는 도서관에 더 자주 다녔다</p>
+            </div>
+    </table>
+    <div class="container">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+    {% include 'shared/_navbar.html' %}
+</body>    
+</html>

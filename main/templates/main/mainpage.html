@@ -1,40 +1,29 @@
-<h1>2021 동국대 멋쟁이 사자처럼 SNS Project</h1>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <TITLE>Introduce KimSwim</TITLE>
-    <link rel="stylesheet" href="mainpage.css">
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-     <table>
-
-        <h1><center>♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡</center></h1>
-        <center><img src= "KakaoTalk_20210405_220449611_02.jpg" width="370"; height="500"; /></center>
-         <h2><center>Kim Suyoung (Swim Kim) </center> </h2>
-         <h2><center>Dongguk Univ. Industrial & Systems Engineering</center></h2>
-        
-            <div class="left">
-                <p>♡SNS♡</p>
-                <p>Instagram : @swimkim__</p>
-                <p>E-mail : ksoo5386@naver.com </p>
-                <p>Phone Number : 010-5662-5385</p>
-                <p>Blog : <a href = "https://blog.naver.com/ksoo5386">https://blog.naver.com/ksoo5386</a></p>
-            </div> 
-            <div class="right">
-                <p>♡FAVORITE♡</p>
-                <p>MOVIE : Sing Street<p>
-                <p>SINGER : HOPPIPOLLA(Band), NCT</p>
-                <p>FOOD : Spicy foods !! , Jelly </p>
-                <p>HOBBY : Dance, Watching drama, Writing Blog</p>
-            </div>
-        <h3><center>♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡</center></h3>
-            
-
-    </table>
+{% block content %}
     
+    <h1>MENU</h1>
+    <a href="{% url 'first' %}">first</a>
+    <a href="{% url 'second' %}">second</a>
+    <img src="{%static 'images/image01.jpg' %}">
+    <h2><a href="{%url 'new'%}">글쓰기</a></h2>
 
-    
-</body>    
-</html>
+    <h1>글 목록</h1>
+    {{post}}
+
+    <div>
+        {% for post in post %}
+        <div>
+            <h3>{{post.title}}</h3>
+            {{post.writer}}<br>
+            {{post.summary}}
+            <a href="{%url 'detail' post.id %}">...자세히</a>
+            <br>
+        </div>
+        {%endfor%}
+    </div>
+
+{% endblock %}
+
+

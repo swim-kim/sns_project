@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <TITLE>Introduce KimSwim</TITLE>
+    <link rel="stylesheet" href="{% static 'css/project copy 2.css' %}">
+    
+</head>
+<body>
+
+     <table>
+            <div class="left">
+                <img src= "{% static 'images/KakaoTalk_20210507_195030709.jpg' %}" width="500"; height="300"; />
+                
+            </div> 
+
+            <div class="right">
+                <img src= "{% static 'images/KakaoTalk_20210507_221258534.jpg' %}" width="500"; height="300";>
+            </div>
+    </table>
+
+    <div class="bottom">
+        <p>#최근 가장 행복했던 순간#</p>
+        <p>호피폴라의 첫 단독콘서트 'Spring to us'</p>
+        <p>좋아하는 밴드의 콘서트를 보러 갔을때</p>
+        <p>좋아하는 노래들을 라이브 공연으로 보고, 들으니 너무 행복했다</p>
+                
+
+    </div>
+    <div class="container">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+    {% include 'shared/_navbar.html' %}
+</body>    
+</html>
