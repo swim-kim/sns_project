@@ -6,7 +6,7 @@ class Post(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     writer = models.CharField(max_length=100)
-    pub_data = models.DateTimeField()
+    pub_date = models.DateTimeField()
     body = models.TextField()
 
     def __str__(self):
