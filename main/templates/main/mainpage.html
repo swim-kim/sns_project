@@ -4,10 +4,10 @@
 {% block content %}
     
     <h1>MENU</h1>
-    <a href="{% url 'first' %}">first</a>
-    <a href="{% url 'second' %}">second</a>
+    <a href="{% url 'main:first' %}">first</a>
+    <a href="{% url 'main:second' %}">second</a>
     <img src="{%static 'images/image01.jpg' %}">
-    <h2><a href="{%url 'new'%}">글쓰기</a></h2>
+    <h2><a href="{%url 'main:new'%}">글쓰기</a></h2>
 
     <h1>글 목록</h1>
     
@@ -19,7 +19,7 @@
             {{post.writer}}<br>
             {{post.body}}
             {{post.summary}}
-            <a href="{%url 'detail' post.id %}">...자세히</a>
+            <a href="{%url 'main:detail' post.id %}">...자세히</a>
             <br>
         </div>
         {%endfor%}
