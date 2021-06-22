@@ -1,3 +1,4 @@
+from django.conf.urls import include
 from django.urls import path
 from .views import *
 
@@ -12,5 +13,6 @@ urlpatterns = [
     path('edit/<str:id>',edit, name="edit"),
     path('update/<str:id>',update, name="update"),
     path('delete/<str:id>', delete, name="delete"),
+    path('accounts/',include('allauth.urls')),
     
 ]
