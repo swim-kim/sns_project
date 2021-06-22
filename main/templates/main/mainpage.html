@@ -19,7 +19,7 @@
             {{post.writer}}<br>
             {{post.body}}
             {{post.summary}}
-            <a href="{%url 'main:detail' post.id %}">...자세히</a>
+            <a href="{% url 'main:detail' post.id %}">...자세히</a>
             <br>
         </div>
         {% endfor %}

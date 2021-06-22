@@ -22,8 +22,9 @@ def create(request):
     new_post.writer = request.user
     new_post.pub_date = timezone.now()
     new_post.body = request.POST['body']
+    new_post.image = request.FILES.get('image')
     new_post.save()
-    return redirect('main:detail',new_post.id)
+    return redirect('main:detail', new_post.id)
 
 def edit(request, id):
     edit_post = Post.objects.get(id = id)
@@ -44,12 +45,3 @@ def delete(request, id):
     delete_post.delete()
     return redirect('main:new')
 
-def create(request):
-    new_post = Post()
-    new_post.title = request.POST['title']
-    new_post.writer = request.POST['writer']
-    new_post.pub_date = timezone.now()
-    new_post.body = request.POST['body']
-    new_post.image = request.FILES.get('image')
-    new_post.save()
-    return redirect('main:detail', new_post.id)
