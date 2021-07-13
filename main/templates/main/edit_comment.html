@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>댓글 수정하기</h1>
+    <form action="{% url 'main:update_comment' post.id comment.id %}"  method="post">
+        {%csrf_token%}
+        <p>작성자 : <input type="text" name="writer" value = "{{comment.writer}}"></p>
+        <p>내용 : <textarea type="text" name="content" id="">{{comment.content}}</textarea></p>
+        <button type="submit">확인</button>
+    </form>
+</div>
+
+{% endblock %}
