@@ -4,15 +4,17 @@
 {% block content %}
 
 <h1>{{post.title}}</h1>
-{% if blog.writer %}
-{% if 'user' in blog.writer.username %}
-    <h3>작성자 : {{ blog.writer.last_name }} {{ blog.writer.first_name }}</h3>
-{% else %}
-    <h3>작성자 : {{ blog.writer }}</h3>
-{% endif %}
-{% else %}
-    <h3>작성자 : 알 수 없음</h3>
-{% endif %}
+{% if post.writer %}
+{% if 'user' in post.writer.username and post.writer.username != 'user' %}
+작성자 : <a href="{% url 'users:mypage' post.writer.id %}">{{ post.writer.last_name }} {{ post.writer.first_name }}</a>
+{% else %}
+작성자 : <a href="{% url 'users:mypage' post.writer.id %}">{{ post.writer }}</a>
+{% endif %}
+{% else %}
+작성자 : 알 수 없음
+{% endif %}
+
+날짜 : {{post.pub_date}}
 <hr>
 {% if post.image %}
     <p><img src="{{ post.image.url }}" alt="사진"></p>

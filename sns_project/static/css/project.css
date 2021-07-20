@@ -1,4 +1,10 @@
-h1,h3{
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+h2{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+h3{
     background-color: rgba(134, 166, 177, 0.829);
     font-size: 20px;
     justify-content: center;
@@ -15,7 +21,7 @@ div.left {
     float: left;
     box-sizing: border-box;
     text-indent: 50px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Patrick Hand', cursive;
     background-color: rgb(168, 205, 235);
     
 }
@@ -24,7 +30,7 @@ div.right {
     float: right;
     box-sizing: border-box;
     text-indent: 50px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Patrick Hand', cursive;
     background-color: rgb(224, 214, 253);
 
 }

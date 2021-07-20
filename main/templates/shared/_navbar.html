@@ -1,23 +1,34 @@
+<style type="text/css">
+  a{text-decoration:none; color:#000000;}         
+  a:hover{color:#489cd4;}                    
+  
+  /* nav tag */
+  nav ul li{padding-top:10px;                    
+     display:inline;                         
+     border-left:1px solid #999;            
+     font:bold 12px Dotum;                     
+     padding:0 10px;                         
+  }    
+</style>
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid"> 
-    <span class="navbar-text">
-    </span>
-    
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle"href="#" id="navbarDropdown"role="button"data-bas-toggle="dropdown"aria-expanded="false">Account</a>
-      <ul class="dropdown-menu"aria-labelledby="navbarDropdown">
-      {% if user.is_authenticated %}
-      <li><a class="dropdown-item"href="{% url 'users:mypage' %}">Mypage</a></li>
-      <li><a class="dropdown-item"href="{% url 'account_logout' %}">Logout</a></li>
-      {% else %}
-      <li><a class="dropdown-item"href="{% url 'account_login' %}">Login</a></li>
-      <li><a class="dropdown-item"href="{% url 'account_signup' %}">Signup</a></li>
-      {% endif %}
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'main:showmain' %}">MENU</a>
+  
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {% if user.is_authenticated %}
+          <li><a class="dropdown-item"href="{% url 'users:mypage' request.user.id %}">Mypage</a></li>
+          <li><a class="dropdown-item"href="{% url 'account_logout' %}">Logout</a></li>
+        {% else %}
+          <li><a class="dropdown-item"href="{% url 'account_login' %}">Login</a></li>
+          <li><a class="dropdown-item"href="{% url 'account_signup' %}">Signup</a></li>
+        {% endif %}
+        <li class="nav-item">
+          <li><a class="dropdown-item"href="{% url 'main:first' %}">First</a></li>
+          <li><a class="dropdown-item"href="{% url 'main:second' %}">Second</a></li>
+        </li>
       </ul>
-    </li>
-    
-    
+    </div>
   </div>
 </nav>
-

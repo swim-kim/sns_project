@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 {% load static %}
+{% include 'shared/_navbar.html' %}
 <html>
+    
 <head>
     <meta charset="UTF-8">
     <TITLE>Introduce KimSwim</TITLE>
@@ -29,17 +31,11 @@
                 <p>FOOD : Spicy foods !! , Jelly </p>
                 <p>HOBBY : Dance, Watching drama, Writing Blog</p>
             </div>
-            <h4><center>♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡♥｡･ﾟ♡ﾟ･｡</center></h4>
-            
-
-    </table>
-    <div class="container">
-        {% block content %}
-
-        {% endblock %}
-    </div>
-    {% include 'shared/_navbar.html' %}
-    
+            <div class="container">
+                {% block content %}
+                
+                {% endblock %}
+            </div>
     
 </body>    
 </html>
