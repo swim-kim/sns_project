@@ -2,6 +2,8 @@ from django.conf.urls import include
 from django.urls import path
 from .views import *
 
+
+
 app_name = "main"
 urlpatterns = [
     path('', showmain, name="showmain"),
@@ -18,4 +20,6 @@ urlpatterns = [
     path('<str:post_id>/create_comment',create_comment, name="create_comment"),
     path('<str:post_id>/<str:comment_id>/update_comment',update_comment, name="update_comment"),
     path('<str:post_id>/<str:comment_id>/delete_comment',delete_comment, name="delete_comment"),
+    path('like_toggle/<int:post_id>/',like_toggle,name="like_toggle"),
+    path('dislike_toggle/<int:post_id>/',dislike_toggle,name="dislike_toggle"),
 ]
